@@ -89,4 +89,5 @@ docker-compose up -d
 
 -- MAILCATCHER URL: http://localhost/mailcatcher
 
-
+## Author
+[@ntsanq - Nguyen Thanh Sang](https://github.com/ntsanq)
