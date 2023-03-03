@@ -1,22 +1,25 @@
 # Shopware Installation
-           
+
 ## Requirements:
+
 - docker
 - docker-compose
 
 ## Clone the project:
+
 ```
    git clone https://github.com/shopware/development.git
 ```
 
-
 Using docker-compose for hosting:
 
 - Create a new .{PROJECT}/docker-compose.yml
+
 ```
    cd {PROJECT}
    touch docker-compose.yml
 ```
+
 - Edit the docker-compose.yml:
 
 ```
@@ -65,11 +68,16 @@ docker-compose up -d
 - If you get this error:
   `Error response from daemon: Ports are not available: exposing port TCP 0.0.0.0:80 -> 0.0.0.0:0: listen tcp 0.0.0.0:80:
   bind: address already in use`
-  - Try to change some ports in docker-compose.yml: 
+    - Try to change some ports in docker-compose.yml:
   ````
    ports:
          - "81:80"
-  ````
+  ````   
+
+- If you get this error in Symfony debug UI:
+  `Unable to find a matching sales channel for the request: http://example.com/". Please make sure the domain mapping is correct.`
+    - Try logging into http://example.com/admin (username: admin , password: shopware)
+    - Go to the Storefront in `Sales channel` >> Find `Domains`. There you can configure the domain.
 
 ## Success Installation
 
